@@ -1,7 +1,7 @@
 %define	module	File-Grep
 %define	name	perl-%{module}
 %define	version	0.02
-%define	release	1mdk
+%define	release	%mkrel 1
 
 Name:		%{name}
 Version:	%{version}
