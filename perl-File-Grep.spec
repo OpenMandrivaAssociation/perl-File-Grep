@@ -1,20 +1,18 @@
-%define	module	File-Grep
-%define	name	perl-%{module}
-%define	version	0.02
-%define	release	%mkrel 3
+%define	upstream_name	 File-Grep
+%define	upstream_version 0.02
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
+
 Summary:	A grep function taking a list of files as argument
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Source:		http://search.cpan.org/CPAN/authors/id/M/MN/MNEYLON/%{module}-%{version}.tar.bz2
-Url:		http://search.cpan.org/dist/%{module}
-BuildRoot:	%{_tmppath}/%{name}-%{version}
-Buildrequires:	perl-devel
-Requires:	perl 
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/M/MN/MNEYLON/%{upstream_name}-%{upstream_version}.tar.bz2
+
 Buildarch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 File::Grep provides similar functionality as perl's builtin grep, map,
@@ -23,7 +21,7 @@ arrays.  While trivial, this module can provide a quick dropin when
 such functionality is needed.
 
 %prep
-%setup -n %{module}-%{version}
+%setup -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -44,4 +42,3 @@ rm -rf %{buildroot}
 %doc README Changes
 %{perl_vendorlib}/File
 %{_mandir}/*/*
-
