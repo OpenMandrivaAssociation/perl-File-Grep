@@ -8,7 +8,7 @@ Release:	4
 Summary:	A grep function taking a list of files as argument
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://search.cpan.org/CPAN/authors/id/M/MN/MNEYLON/%{upstream_name}-%{upstream_version}.tar.bz2
 
 BuildRequires:	perl-devel
