@@ -1,15 +1,13 @@
 %define	upstream_name	 File-Grep
-%define	upstream_version 0.02
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	0.02
+Release:	5
 
 Summary:	A grep function taking a list of files as argument
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://search.cpan.org/CPAN/authors/id/M/MN/MNEYLON/%{upstream_name}-%{upstream_version}.tar.bz2
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://search.cpan.org/CPAN/authors/id/M/MN/MNEYLON/%{upstream_name}-%{version}.tar.bz2
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ arrays.  While trivial, this module can provide a quick dropin when
 such functionality is needed.
 
 %prep
-%setup -n %{upstream_name}-%{upstream_version}
+%setup -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -43,9 +41,7 @@ make test
 %changelog
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.20.0-1mdv2010.0
 + Revision: 402137
-- rebuild using %%perl_convert_version
-
-* Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.02-3mdv2009.0
+- rebuild using %0.02 Wed Jul 23 2008 Thierry Vignaud <tv@mandriva.org> 0.02-3mdv2009.0
 + Revision: 241216
 - rebuild
 - kill re-definition of %%buildroot on Pixel's request
